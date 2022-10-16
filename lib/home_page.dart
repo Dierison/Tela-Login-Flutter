@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     TextButton(
                       style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
+                       // foregroundColor: Colors.white,
                         backgroundColor: Colors.redAccent,
                         textStyle: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     TextButton(
                       style: TextButton.styleFrom(
-                        foregroundColor: Colors.white,
+                       // foregroundColor: Colors.white,
                         backgroundColor: Colors.lightGreen,
                         textStyle: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
