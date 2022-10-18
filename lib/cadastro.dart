@@ -47,14 +47,14 @@ class _CadastroState extends State<Cadastro> {
 
               //Seja Bem Vindo!
               Text(
-                'Seja Bem Vindo!',
+                'Wellcome!',
                 style: GoogleFonts.bebasNeue(
                   fontSize: 52,
                 ),
               ),
               const SizedBox(height: 10),
               const Text(
-                'Digite seu nome e senha para efetuar o cadastro!',
+                'Type your name and password to regiter!',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -77,7 +77,7 @@ class _CadastroState extends State<Cadastro> {
                       controller: controllerNome,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Nome',
+                        hintText: 'Name',
                       ),
                     ),
                   ),
@@ -124,7 +124,7 @@ class _CadastroState extends State<Cadastro> {
                       obscureText: true,
                       decoration: const InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Senha',
+                        hintText: 'Password',
                       ),
                     ),
                   ),
@@ -142,15 +142,16 @@ class _CadastroState extends State<Cadastro> {
                   ),
                   child: Column(
                     children: [
-                      TextButton(
+                      OutlinedButton(
                         style: TextButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Colors.blue,
                           textStyle: const TextStyle(
-                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         ),
                         onPressed: cadastrar,
-                        child: const Text('Cadastrar'),
+                        child: const Text('Register'),
                       ),
                     ],
                   ),
@@ -163,7 +164,7 @@ class _CadastroState extends State<Cadastro> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Já tem cadastro? Faça seu',
+                    'Already have registration? ',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -173,7 +174,7 @@ class _CadastroState extends State<Cadastro> {
                           MaterialPageRoute(
                               builder: (context) => const LoginPage()))),
                       child: const Text(
-                        "login",
+                        "login now",
                         style: TextStyle(
                             color: Colors.orange, fontWeight: FontWeight.bold),
                       ))

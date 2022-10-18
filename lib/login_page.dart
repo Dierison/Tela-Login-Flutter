@@ -47,16 +47,16 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height: 55),
 
-              //Olá Novamente!
+              //Hello Again!
               Text(
-                'Olá Novamente!',
+                'Hello Again!',
                 style: GoogleFonts.bebasNeue(
                   fontSize: 52,
                 ),
               ),
               SizedBox(height: 10),
               Text(
-                'Seja bem vindo, sentimos a sua falta!',
+                'Welcome back, you\'ve been missed!',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                       controller: controllerUsuario,
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Nome',
+                        hintText: 'User',
                       ),
                     ),
                   ),
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: true,
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: 'Senha',
+                        hintText: 'Password',
                       ),
                     ),
                   ),
@@ -117,10 +117,11 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      TextButton(
+                    OutlinedButton(
                         style: TextButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Colors.blue,
                           textStyle: const TextStyle(
-                              color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         ),
@@ -137,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Crie o seu',
+                    'Not a member? ',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -147,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                           MaterialPageRoute(
                               builder: (context) => const Cadastro()))),
                       child: Text(
-                        "cadastro",
+                        "Register now!",
                         style: TextStyle(
                             color: Colors.orange, fontWeight: FontWeight.bold),
                       ))

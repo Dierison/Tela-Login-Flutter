@@ -32,10 +32,10 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> trocar() async {
     try {
-      var response = await Dio().get('https://api.kanye.rest');
+      var response = await Dio().get('https://api.adviceslip.com\advice');
       Map<String, dynamic> responseMap = json.decode(response.toString());
       setState(() {
-        controllerFrase.text = responseMap['quote'];
+        controllerFrase.text = responseMap['slip'];
       });
     } catch (e) {}
   }
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Olá ${widget.nomeUsuario}"),
+          title: Text("Hi ${widget.nomeUsuario}!!!"),
         ),
         body: SizedBox(
           width: double.infinity,
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                       controller: controllerFrase,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: 'Frase da vez',
+                        hintText: 'Next advice',
                       ),
                     )
                   ])),
@@ -81,25 +81,26 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    TextButton(
+                    OutlinedButton(
                       style: TextButton.styleFrom(
-                       // foregroundColor: Colors.white,
-                        backgroundColor: Colors.redAccent,
+                        primary: Colors.white,
+                        backgroundColor: Colors.red,
                         textStyle: const TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       onPressed: trocar,
-                      child: const Text('Trocar...'),
+                      child: const Text('Next...'),
                     ),
-                    TextButton(
+                    OutlinedButton(
                       style: TextButton.styleFrom(
-                       // foregroundColor: Colors.white,
-                        backgroundColor: Colors.lightGreen,
+                          primary: Colors.white,
+                          backgroundColor: Colors.green,
                         textStyle: const TextStyle(
+                            color: Colors.black,
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                       onPressed: gostei,
-                      child: const Text('Gostei!'),
+                      child: const Text('I liked!'),
                     ),
                   ],
                 )),
