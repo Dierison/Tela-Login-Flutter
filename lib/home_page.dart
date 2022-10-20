@@ -32,10 +32,12 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> trocar() async {
     try {
-      var response = await Dio().get('https://api.adviceslip.com\advice');
+      var response = await Dio().get('https://api.adviceslip.com/advice');
       Map<String, dynamic> responseMap = json.decode(response.toString());
+      var slipData = responseMap['slip'];
+      var quote = slipData['advice'];
       setState(() {
-        controllerFrase.text = responseMap['slip'];
+        controllerFrase.text = quote;
       });
     } catch (e) {}
   }
@@ -93,11 +95,12 @@ class _HomePageState extends State<HomePage> {
                     ),
                     OutlinedButton(
                       style: TextButton.styleFrom(
-                          primary: Colors.white,
-                          backgroundColor: Colors.green,
+                        primary: Colors.white,
+                        backgroundColor: Colors.green,
                         textStyle: const TextStyle(
                             color: Colors.black,
-                            fontWeight: FontWeight.bold, fontSize: 18),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
                       ),
                       onPressed: gostei,
                       child: const Text('I liked!'),
