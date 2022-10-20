@@ -33,16 +33,19 @@ class _CadastroState extends State<Cadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 167, 208, 231),
+        backgroundColor: const Color.fromARGB(255,149,186,168),
         body: SafeArea(
             child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
-                Icons.android,
-                size: 200,
-              ),
+                Container(
+                  width: 300,
+                  height: 300,
+                  child: Image.network(
+                    'https://static.vecteezy.com/ti/vetor-gratis/p1/665318-mulher-negocio-com-anjo-diabo-ligado-ombro-gr%C3%A1tis-vetor.jpg'
+                  ),
+                ),
               const SizedBox(height: 55),
 
               //Seja Bem Vindo!

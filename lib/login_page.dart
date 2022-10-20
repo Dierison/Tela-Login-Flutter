@@ -35,16 +35,19 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 167, 208, 231),
+        backgroundColor: Color.fromARGB(255,149,186,168),
         body: SafeArea(
             child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.android,
-                size: 200,
-              ),
+                Container(
+                  width: 300,
+                  height: 300,
+                  child: Image.network(
+                    'https://static.vecteezy.com/ti/vetor-gratis/p1/665318-mulher-negocio-com-anjo-diabo-ligado-ombro-gr%C3%A1tis-vetor.jpg'
+                  ),
+                ),
               SizedBox(height: 55),
 
               //Hello Again!
