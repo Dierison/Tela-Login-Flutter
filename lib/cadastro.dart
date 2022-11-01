@@ -35,7 +35,7 @@ class _CadastroState extends State<Cadastro> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255,149,186,168),
         body: SafeArea(
-            child: Center(
+          child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -46,7 +46,7 @@ class _CadastroState extends State<Cadastro> {
                     'https://static.vecteezy.com/ti/vetor-gratis/p1/665318-mulher-negocio-com-anjo-diabo-ligado-ombro-gr%C3%A1tis-vetor.jpg'
                   ),
                 ),
-              const SizedBox(height: 55),
+            
 
               //Seja Bem Vindo!
               Text(
