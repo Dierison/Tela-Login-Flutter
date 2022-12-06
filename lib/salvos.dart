@@ -26,6 +26,18 @@ class _SalvosPageState extends State<SalvosPage> {
     });
   }
 
+   deletarFrase(Future<dynamic> frase, String frase2) async {
+    try {
+      await Dio().delete('http://localhost:3001/frases/usuario/${widget.idUsuario}', data: {
+        'frase': frase,
+        'idUsuario': widget.idUsuario,
+      });
+      carregarFrases();
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     carregarFrases();
@@ -40,6 +52,17 @@ class _SalvosPageState extends State<SalvosPage> {
                 itemBuilder: (BuildContext context, int frase) {
                   return ListTile(
                     title: Text(tabela[frase]),
+                    trailing: Container(width:100, child:Row (children:[OutlinedButton(
+                        style: TextButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Colors.white,
+                          textStyle: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        ),
+                        onPressed: deletarFrase(tabela[frase]),
+                        child: Icon(Icons.delete),
+                      ),])),
                   );
                 },
                 padding: EdgeInsets.all(16),
